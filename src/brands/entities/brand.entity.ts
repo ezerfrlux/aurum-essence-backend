@@ -12,6 +12,6 @@ export class Brand {
   @Column({ nullable: true })
   country: string;
 
-  @OneToMany(() => Perfume, (perfume) => perfume.brand)
+  @OneToMany(() => Perfume, (perfume) => perfume.brand, { cascade: true })
   perfumes: Perfume[];
 }
