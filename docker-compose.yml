@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:17
+    container_name: aurum_db_container
+    restart: always
+    environment:
+      POSTGRES_USER: ezer
+      POSTGRES_PASSWORD: 12345678
+      POSTGRES_DB: aurum_essence_db
+    ports:
+      - "5433:5432"
+    volumes: 
+      - postgres_data:/var/lib/postgresql/data
+    
+volumes: 
+  postgres_data:
